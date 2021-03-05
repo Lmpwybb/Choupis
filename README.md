@@ -2,7 +2,7 @@
 
 ![Logo Choupis](https://choupis.alwaysdata.net/pictures/choupisV.png)
 
-## Fake url shortener
+## Real url shortener
 
 Here you will find how Choupis was made, pure HTML, CSS, PHP and Bulma.
 
