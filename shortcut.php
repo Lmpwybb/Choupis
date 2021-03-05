@@ -12,12 +12,17 @@ function shortCutIt(array $form): string
         return "Adresse URL non valide";
     }
 
+    $parseUrl = parse_url($form['url'], PHP_URL_SCHEME);
+    if ($parseUrl !== "http" && $parseUrl !== "https") {
+        return "Adresse URL non valide";
+    }
+
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
         $protocol = "https";
     } else {
-        $protocol  = "http";
+        $protocol = "http";
     }
-    $protocol  .= "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $protocol .= "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
     $connection = getConnection();
     $url = htmlspecialchars($form['url']);

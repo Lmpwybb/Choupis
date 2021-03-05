@@ -28,11 +28,11 @@ require 'shortcut.php';
             <h2 class="subtitle is-3 has-text-white">Largement plus choupie que les autres.</h2>
             <form method="post" action="index.php">
                 <label>
-                    <input class="input is-link is-medium is-rounded scale" type="url" name="url"
+                    <input class="input is-link is-medium is-rounded" type="url" name="url"
                            placeholder="Collez un lien">
                 </label>
                 <label>
-                    <input class="button is-medium is-rounded scale has-text-white" type="submit" value="Raccourcir">
+                    <input class="button is-medium is-rounded has-text-white" type="submit" value="Raccourcir">
                 </label>
             </form>
             <div class="notification is-rounded">
@@ -45,7 +45,7 @@ require 'shortcut.php';
                         $redirect->execute(array($url));
                         $result = $redirect->fetch(PDO::FETCH_ASSOC);
 
-                        header('location: ' . $result['url']);
+                        header('Location: ' . $result['url']);
                         exit();
                     }
 
