@@ -52,7 +52,7 @@ require 'shortcut.php';
                     if (isset($_POST['url'])) {
                         echo "<b>" . shortCutIt($_POST) . "</b>";
                     } else {
-                        echo "<b>Votre lien sera ici</b>";
+                        echo "<b>Votre lien raccourci sera généré ici</b>";
                     }
                 ?>
             </div>
