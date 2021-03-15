@@ -2,13 +2,13 @@ body, html {
     margin: 0;
     padding: 0;
 }
-.block:not(:last-child) {
-    margin-bottom: 1.5rem;
-}
 .has-bg-img {
     background-image: url("pictures/background.jpg");
     background-position: center center;
     background-size: cover;
+}
+.title {
+    margin-top: 10vw;
 }
 input[type=url] {
     width: 50%;
@@ -20,6 +20,6 @@ input[type=submit] {
 .notification {
     color: #A84CFF;
     width: 50%;
-    margin: 1.5rem;
+    margin: 2rem;
     display: inline-block;
 }
