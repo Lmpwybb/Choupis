@@ -35,27 +35,23 @@ require 'shortcut.php';
                     <input class="button is-medium is-rounded has-text-white" type="submit" value="Raccourcir">
                 </label>
             </form>
-            <div class="notification is-rounded">
-                <?php
-                    if (isset($_GET['url'])) {
-                        $connection = getConnection();
-                        $url = htmlspecialchars($_GET['url']);
+            <?php
+                if (isset($_GET['url'])) {
+                    $connection = getConnection();
+                    $url = htmlspecialchars($_GET['url']);
 
-                        $redirect = $connection->prepare('SELECT * FROM links WHERE shortcut = ?');
-                        $redirect->execute(array($url));
-                        $result = $redirect->fetch(PDO::FETCH_ASSOC);
+                    $redirect = $connection->prepare('SELECT * FROM links WHERE shortcut = ?');
+                    $redirect->execute(array($url));
+                    $result = $redirect->fetch(PDO::FETCH_ASSOC);
 
-                        header('Location: ' . $result['url']);
-                        exit();
-                    }
+                    header('Location: ' . $result['url']);
+                    exit();
+                }
 
-                    if (isset($_POST['url'])) {
-                        echo "<b>" . shortCutIt($_POST) . "</b>";
-                    } else {
-                        echo "<b>Votre lien raccourci sera généré ici</b>";
-                    }
-                ?>
-            </div>
+                if (isset($_POST['url'])) {
+                    echo "<div class='notification is-rounded'><b>" . shortCutIt($_POST) . "</b></div>";
+                }
+            ?>
         </div>
 </section>
 <footer class="footer has-text-centered">
