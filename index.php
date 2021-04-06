@@ -19,23 +19,26 @@ require 'shortcut.php';
     <link rel="shortcut icon" href="pictures/favicon.ico" type="image/png">
 </head>
 <body>
-<section class="section has-bg-img">
-        <header class="has-text-left">
-            <img src="pictures/choupisB.png" alt="logo">
+<section class="hero is-fullheight has-bg-img">
+        <header class="hero-head">
+            <div class="container">
+                <img src="pictures/choupisB.png" alt="logo">
+            </div>
         </header>
-        <div class="block has-text-centered">
-            <h1 class="title is-2 has-text-white">Une URL à rallonge ? Choupisez-la !</h1>
-            <h2 class="subtitle is-3 has-text-white">Largement plus choupie que les autres.</h2>
-            <form method="post" action="index.php">
-                <label>
-                    <input class="input is-link is-medium is-rounded" type="url" name="url"
-                           placeholder="Collez un lien">
-                </label>
-                <label>
-                    <input class="button is-medium is-rounded has-text-white" type="submit" value="Raccourcir">
-                </label>
-            </form>
-            <?php
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <p class="title is-2 has-text-white">Une URL à rallonge ? Choupisez-la !</p>
+                <p class="subtitle is-3 has-text-white">Largement plus choupie que les autres.</p>
+                <form method="post" action="index.php">
+                    <label>
+                        <input class="input is-link is-medium is-rounded" type="url" name="url"
+                               placeholder="Collez un lien">
+                    </label>
+                    <label>
+                        <input class="button is-medium is-rounded has-text-white" type="submit" value="Raccourcir">
+                    </label>
+                </form>
+                <?php
                 if (isset($_GET['url'])) {
                     $connection = getConnection();
                     $url = htmlspecialchars($_GET['url']);
@@ -51,7 +54,8 @@ require 'shortcut.php';
                 if (isset($_POST['url'])) {
                     echo "<div class='notification is-rounded'><b>" . shortCutIt($_POST) . "</b></div>";
                 }
-            ?>
+                ?>
+            </div>
         </div>
 </section>
 <footer class="footer has-text-centered">
