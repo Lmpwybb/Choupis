@@ -1,6 +1,6 @@
 <?php
 
-require 'shortcut.php';
+require 'src/shortcut.php';
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ require 'shortcut.php';
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choupis</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="design/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="shortcut icon" href="pictures/favicon.ico" type="image/png">
 </head>
@@ -27,8 +27,8 @@ require 'shortcut.php';
         </header>
         <div class="hero-body has-text-centered">
             <div class="container">
-                <p class="title is-2 has-text-white">Une URL à rallonge ? Choupisez-la !</p>
-                <p class="subtitle is-3 has-text-white">Largement plus choupie que les autres.</p>
+                <h1 class="title has-text-white">Une URL à rallonge ? Choupisez-la !</h1>
+                <h2 class="subtitle has-text-white">Largement plus choupie que les autres.</h2>
                 <form method="post" action="index.php">
                     <label>
                         <input class="input is-link is-medium is-rounded" type="url" name="url"
@@ -60,7 +60,7 @@ require 'shortcut.php';
 </section>
 <footer class="footer has-text-centered">
     <img src="pictures/choupisV.png" alt="logo">
-    <p>&copy choupis.alwaysdata.net</p>
+    <p>&copy; choupis.alwaysdata.net</p>
 </footer>
 </body>
 </html>

@@ -3,7 +3,7 @@ body, html {
     padding: 0;
 }
 .has-bg-img {
-    background-image: url("pictures/background.jpg");
+    background-image: url("../pictures/background.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
