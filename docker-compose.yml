@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  choupis:
+    container_name: choupis
+    image: jejem/php:8.1-apache
+    environment:
+      APP_ENV: dev
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./:/var/www/html
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.8.3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: choupis
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+        - "127.0.0.1:8000:80"
+    environment:
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PMA_ROOT_PASSWORD: root

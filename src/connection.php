@@ -11,7 +11,7 @@ function getConnection(): PDO
                               . "; charset=utf8", $config['username'], $config['password']);
         $connection->exec("SET NAMES utf8");
     } catch (PDOException $exception) {
-       die("Connection error to MySQL: " . $exception->getMessage());
+        die("Connection error to MySQL: " . $exception->getMessage());
     }
 
     return $connection;
