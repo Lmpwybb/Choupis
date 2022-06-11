@@ -3,7 +3,10 @@ version: '3.7'
 services:
   choupis:
     container_name: choupis
-    image: jejem/php:8.1-apache
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: choupis
     environment:
       APP_ENV: dev
     ports:
