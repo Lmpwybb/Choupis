@@ -4,8 +4,8 @@ services:
   choupis:
     container_name: choupis
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     image: choupis
     environment:
       APP_ENV: dev
@@ -26,7 +26,7 @@ services:
     depends_on:
       - mariadb
     ports:
-        - "127.0.0.1:8000:80"
+      - "127.0.0.1:8000:80"
     environment:
       PMA_HOST: mariadb
       PMA_PORT: 3306
