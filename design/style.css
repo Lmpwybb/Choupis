@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
 }
+
 .has-bg-img {
     background-image: url("../pictures/background.jpg");
     background-position: center center;
@@ -9,13 +10,16 @@ body, html {
     background-attachment: fixed;
     background-size: cover;
 }
+
 input[type=url] {
     width: 50%;
 }
+
 input[type=submit] {
     cursor: pointer;
     background: #A84CFF;
 }
+
 .notification {
     color: #A84CFF;
     width: 50%;

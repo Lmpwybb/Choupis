@@ -1,8 +1,5 @@
-<?php
+<?php require __DIR__ . '/src/shortcut.php'; ?>
 
-require 'src/shortcut.php';
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

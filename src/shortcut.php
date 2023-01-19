@@ -1,8 +1,8 @@
 <?php
 
-require 'connection.php';
+require __DIR__ . '/connection.php';
 
-function checkUrl(array $form): string {
+function checkUrl(array $form): ?string {
     if (empty($form['url'])) {
         return "Veuillez saisir une URL à raccourcir";
     }
@@ -16,7 +16,7 @@ function checkUrl(array $form): string {
         return "Adresse URL non valide";
     }
 
-    return "";
+    return null;
 }
 
 function shortCutIt(array $form): string
@@ -29,7 +29,7 @@ function shortCutIt(array $form): string
     $protocol .= "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
     $checkUrl = checkUrl($form);
-    if ($checkUrl !== "") {
+    if ($checkUrl !== null) {
         return $checkUrl;
     }
 
