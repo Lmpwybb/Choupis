@@ -2,7 +2,7 @@
 
 require __DIR__ . '/connection.php';
 
-function checkUrl(array $form): ?string {
+function validateUrl(array $form): ?string {
     if (empty($form['url'])) {
         return "Veuillez saisir une URL à raccourcir";
     }
@@ -19,7 +19,7 @@ function checkUrl(array $form): ?string {
     return null;
 }
 
-function shortCutIt(array $form): string
+function createShortcut(array $form): string
 {
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
         $protocol = "https";
@@ -28,12 +28,12 @@ function shortCutIt(array $form): string
     }
     $protocol .= "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-    $checkUrl = checkUrl($form);
+    $checkUrl = validateUrl($form);
     if ($checkUrl !== null) {
         return $checkUrl;
     }
 
-    $connection = getConnection();
+    $connection = getDbConnection();
     $url = htmlspecialchars($form['url']);
     $duplicatedUrl = $connection->prepare('SELECT * FROM links WHERE url = ?');
     $duplicatedUrl->execute(array($url));

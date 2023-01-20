@@ -2,7 +2,7 @@
 
 require __DIR__ . "/config.php";
 
-function getConnection(): PDO
+function getDbConnection(): PDO
 {
     global $config;
     $connection = null;

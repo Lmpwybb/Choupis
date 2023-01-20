@@ -37,10 +37,10 @@
             </form>
             <?php
             if (isset($_GET['url'])) {
-                $connection = getConnection();
+                $dbConnection = getDbConnection();
                 $url = htmlspecialchars($_GET['url']);
 
-                $redirect = $connection->prepare('SELECT * FROM links WHERE shortcut = ?');
+                $redirect = $dbConnection->prepare('SELECT * FROM links WHERE shortcut = ?');
                 $redirect->execute(array($url));
                 $result = $redirect->fetch(PDO::FETCH_ASSOC);
 
@@ -49,7 +49,7 @@
             }
 
             if (isset($_POST['url'])) {
-                echo "<div class='notification is-rounded'><b>" . shortCutIt($_POST) . "</b></div>";
+                echo "<div class='notification is-rounded'><b>" . createShortcut($_POST) . "</b></div>";
             }
             ?>
         </div>
